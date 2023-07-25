@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export const Login = () =>{
     const CLIENT_ID = "bd082bb71cdf43fdbe70dd6eb449d50d"
