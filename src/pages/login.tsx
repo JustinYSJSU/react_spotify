@@ -25,6 +25,13 @@ export const Login = () => {
                 </div>
             </div>
 
+            <div className = "container">
+                <h3> Summary here</h3>
+                <h3> Summary here</h3>
+                <h3> Summary here</h3>
+                <h3> Summary here</h3>
+            </div>
+
 
         </div>
     )
