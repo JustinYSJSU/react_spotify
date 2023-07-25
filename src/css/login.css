@@ -1,0 +1,19 @@
+html,body{
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+    
+#login-con{
+    height: 100%;
+    align-content: center;
+}
+    
+#login-card{
+    background-color: #F0F0F0;
+}
+
+
+    
