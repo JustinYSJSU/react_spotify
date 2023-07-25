@@ -9,8 +9,6 @@ html,body{
 #login-con{
     height: 100%;
     align-content: center;
-    display: flex;
-    max-width: 1000px;
 }
     
 #login-card{
