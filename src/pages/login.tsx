@@ -26,10 +26,11 @@ export const Login = () => {
             </div>
 
             <div className = "container">
-                <h3> Summary here</h3>
-                <h3> Summary here</h3>
-                <h3> Summary here</h3>
-                <h3> Summary here</h3>
+                <h3> Get a quick summary of your Spotify account</h3>
+                <h3> 1. Choose from 3 different timespans</h3>
+                <h3> 2. See your top artists and songs </h3>
+                <h3> 3. Share with friends and family!</h3>
+
             </div>
 
 

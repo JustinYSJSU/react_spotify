@@ -15,5 +15,10 @@ html,body{
     background-color: #F0F0F0;
 }
 
+.container{
+    margin-top: 100px;
+    display: inline;
+}
+
 
     
