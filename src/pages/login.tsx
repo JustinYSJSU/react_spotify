@@ -15,7 +15,7 @@ export const Login = () => {
                     </div>
 
                     <div className="card-body">
-                        <h3> With React Spotify, you can get a quick and easy summary of your Spotify 
+                        <h3> With Spotify Summary, you can get a quick and easy summary of your Spotify 
                              account. This includes your top songs and artists of all time. 
                              You can share this with friends and family. 
                         </h3>
