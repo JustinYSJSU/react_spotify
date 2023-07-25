@@ -1,24 +1,15 @@
-html,body{
-    background-color: white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Numans', sans-serif;
-}
+div.container {
+    margin-top: 75px;
+    text-align: center;
+  }
+  
+  ul.myUL {
     
-#login-con{
-    height: 100%;
-    align-content: center;
-}
-    
-#login-card{
-    background-color: #F0F0F0;
-}
+    display: inline-block;
+    text-align: left;
+    list-style-type: none;
+  }
 
-.container{
-    margin-top: 100px;
-    display: inline;
-}
 
 
     
