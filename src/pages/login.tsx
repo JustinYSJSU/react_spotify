@@ -8,8 +8,8 @@ export const Login = () =>{
     return(
         <div>
             <h1> Login Page </h1>
-            <a className = "btn btn-success" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
-            > LOGIN HERE </a>
+            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+            > <button className = "btn btn-success"> Login with Spotify </button> </a>
         </div>
     )
     
