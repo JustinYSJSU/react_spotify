@@ -15,10 +15,6 @@ export const Login = () => {
                     </div>
 
                     <div className="card-body">
-                        <h3> With Spotify Summary, you can get a quick and easy summary of your Spotify 
-                             account. This includes your top songs and artists of all time. 
-                             You can share this with friends and family. 
-                        </h3>
                         <h3> To get started, sign in with your Spotify account</h3>
                     </div>
 
