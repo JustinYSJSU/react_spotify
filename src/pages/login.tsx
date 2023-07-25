@@ -11,11 +11,14 @@ export const Login = () => {
             <div className="d-flex justify-content-center h-100">
                 <div className="card" id="login-card">
                     <div className="card-header">
-                        <h3>Welcome to React Spotify </h3>
+                        <h3> Welcome to Spotify Summary </h3>
                     </div>
 
                     <div className="card-body">
-                        <h3> With React Spotify, you can view your top songs and artists</h3>
+                        <h3> With React Spotify, you can get a quick and easy summary of your Spotify 
+                             account. This includes your top songs and artists of all time. 
+                             You can share this with friends and family. 
+                        </h3>
                         <h3> To get started, sign in with your Spotify account</h3>
                     </div>
 
@@ -26,7 +29,7 @@ export const Login = () => {
                 </div>
             </div>
 
-            
+
         </div>
     )
 
