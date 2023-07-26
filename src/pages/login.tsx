@@ -1,3 +1,6 @@
+//<a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+//> <button className="btn btn-success"> Login with Spotify </button> </a>
+
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import '../css/login.css'
 export const Login = () => {
@@ -7,35 +10,20 @@ export const Login = () => {
     const RESPONSE_TYPE = "token"
 
     return (
-        <div id="login-con">
-            <div className="d-flex justify-content-center h-100">
-                <div className="card" id="login-card">
-                    <div className="card-header">
-                        <h3> Welcome to Spotify Summary </h3>
-                    </div>
+        <div>
+            <header className="login-header"> Spotify Summary </header>
 
-                    <div className="card-body">
-                        <h3> To get started, sign in with your Spotify account</h3>
-                    </div>
+            <div className="login-card">
+                <div className="login-text"> Log in to Spotify </div>
 
-                    <div className="card-footer">
-                        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
-                        > <button className="btn btn-success"> Login with Spotify </button> </a>
-                    </div>
+                <div> <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+                > <button className="login-button btn btn-success"> Log In  </button> </a>
                 </div>
+                
             </div>
-
-            <div className="container">
-                <h2> How to use Spotify Summary</h2>
-                <ul className="myUL">
-                    
-                    <li> <h3> 1. Choose from 3 different timespans</h3> </li>
-                    <li> <h3> 2. See your top artists and songs</h3> </li>
-                    <li> <h3> 3. Share with friends and family!</h3> </li>
-                </ul>
-            </div>
-
         </div>
+
+
     )
 
 }
