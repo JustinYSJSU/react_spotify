@@ -54,10 +54,6 @@ color: white;
   font-weight: 700;
 }
 
-.text-muted {
-  color: white;
-  font-size: 14px;
-}
 
 .container .box {
   width: 100px;
@@ -68,10 +64,7 @@ color: white;
   justify-content: center;
   border: 2px solid transparent;
   text-decoration: none;
-  color: white;
 }
-
-
 
 .align-items-center{
   margin-top: 75px;
@@ -89,18 +82,7 @@ color: white;
   font-size: 12px;
 }
 
-.fas.fa-times {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  height: 20px;
-  width: 20px;
-  background-color: white;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 @media (max-width:767px) {
   body {
