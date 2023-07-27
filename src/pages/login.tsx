@@ -25,7 +25,6 @@ export const Login = () => {
                             </div>
                         </div>
                     </div>
-
                     <p className="after-text"> See and share your top songs and artists </p>
                 </div>
                 <span className="fas fa-times" />
