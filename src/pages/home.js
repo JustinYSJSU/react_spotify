@@ -31,12 +31,24 @@ export const Home = () => {
        })
        setDisplayName(data.display_name)
     }
-
     getDisplayName()
 
+
 return (
-    <div>
-        <h1 className="temp-heading"> Welcome, {displayName}! </h1>
-    </div>
+    <div className="container">
+            <div className="body d-md-flex align-items-center justify-content-between">
+                <div className=" box-2 d-flex flex-column h-100">
+                    <div className="mt-5">
+                        <p className="mb-1 h-1"> Spotify Summary</p>
+                        <div className="d-flex flex-column ">
+                            <div className="align-items-center">
+                               Welcome, {displayName}!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span className="fas fa-times" />
+            </div>
+        </div>
 )
 }
