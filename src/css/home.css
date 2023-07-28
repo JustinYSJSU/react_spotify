@@ -14,6 +14,14 @@ color: white;
     flex-direction: column;
     align-items: flex-start; /* To position elements from left to right */
     padding: 20px; /* Optional: Add padding to the body wrapper */
+    position: relative;
+    width: 720px;
+    height: 440px;
+    margin: 20px auto;
+    border: 1px solid #dddd;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   
   .card-header {
