@@ -29,14 +29,14 @@ export const Home = () => {
                 Authorization: `Bearer ${token}`
             }
        })
-       console.log(data.display_name)
+       setDisplayName(data.display_name)
     }
-    getDisplayName()
 
+    getDisplayName()
 
 return (
     <div>
-        <h1 className="temp-heading"> Home Page </h1>
+        <h1 className="temp-heading"> Welcome, {displayName}! </h1>
     </div>
 )
 }
