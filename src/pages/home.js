@@ -1,6 +1,6 @@
 import "../css/home.css"
 import axios from "axios"
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 
 export const Home = () => {
 
@@ -16,32 +16,41 @@ export const Home = () => {
             token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token"))?.split("=")[1]
             window.location.hash = ""
             window.localStorage.setItem("token", token)
-            
+
         }
 
         setToken(token)
         console.log(token)
-    },[])
+    }, [])
 
     const getDisplayName = async () => {
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
-       })
-       setDisplayName(data.display_name)
+        })
+        setDisplayName(data.display_name)
     }
     getDisplayName()
 
 
-return (
-    <div className="container">
+    return (
+        <div className="container">
             <div className="body d-md-flex align-items-center justify-content-between">
                 <div className=" box-2 d-flex flex-column h-100">
-                    Welcome to Spoify Summary, {displayName}! 
+                    <div className="mt-5">
+                        <p className="mb-1 h-1"> Welcome to Spotify Summary, {displayName}! </p>
+                        <div className="d-flex flex-column ">
+                            <div className="align-items-center">
+                                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+                                > <button className="btn btn-success"> Login with Spotify </button> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <p className="after-text"> See and share your top songs and artists </p>
                 </div>
                 <span className="fas fa-times" />
             </div>
         </div>
-)
+    )
 }
