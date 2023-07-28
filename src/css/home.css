@@ -36,8 +36,14 @@
 
 .card-body {
     /* Add styles for the card body */
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 18px;
     color: #555;
     /* Optional: Customize text color */
+}
+
+.card-select{
+    margin-top: 30px;
+    font-size: 18px;
+    color: white;
 }
