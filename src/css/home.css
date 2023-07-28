@@ -1,19 +1,21 @@
 .container {
     /* Add container styles as needed */
     position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-padding: 10px;
-color: white;
-  }
-  
-  .body-1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: white;
+}
+
+.body-1 {
     /* Add styles for the card body wrapper */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* To position elements from left to right */
-    padding: 20px; /* Optional: Add padding to the body wrapper */
+    align-items: flex-start;
+    /* To position elements from left to right */
+    padding: 20px;
+    /* Optional: Add padding to the body wrapper */
     position: relative;
     width: 720px;
     height: 440px;
@@ -22,18 +24,20 @@ color: white;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  
-  .card-header {
+}
+
+.card-header {
     /* Add styles for the card header */
-    font-size: 18px;
+    font-size: 36px;
     font-weight: bold;
-    padding-bottom: 10px; /* Optional: Add spacing between header and body */
-  }
-  
-  .card-body {
+    padding-bottom: 10px;
+    /* Optional: Add spacing between header and body */
+}
+
+.card-body {
     /* Add styles for the card body */
-    font-size: 14px;
-    color: #555; /* Optional: Customize text color */
-  }
-  
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+    /* Optional: Customize text color */
+}
