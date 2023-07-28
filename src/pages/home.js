@@ -37,7 +37,9 @@ export const Home = () => {
     return (
         <div className="container">
             <div className="body d-md-flex align-items-center justify-content-between">
-                Welcome to Spotify Summary, {displayName}!
+                <div className="card-body">
+                   Welcome to Spotify Summary, {displayName}!
+                </div>
             </div>
         </div>
     )
