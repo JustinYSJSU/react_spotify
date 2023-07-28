@@ -37,9 +37,12 @@ export const Home = () => {
     return (
         <div className="container">
             <div className="body d-md-flex align-items-center justify-content-between">
-                <div className="card-body">
+                <div className="card-header">
                    Welcome to Spotify Summary, {displayName}!
-                   Use the menu below to choose your category, number of items, and time range. 
+                </div>
+
+                <div className="card-body">
+                    Use the menu below to choose your category, number of items, and time range
                 </div>
             </div>
         </div>
