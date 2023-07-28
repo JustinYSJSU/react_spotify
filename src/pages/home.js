@@ -29,9 +29,8 @@ export const Home = () => {
                 Authorization: `Bearer ${token}`
             }
        })
-       console.log(data)
+       console.log(data.display_name)
     }
-
     getDisplayName()
 
 
