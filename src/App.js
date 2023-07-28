@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Login } from './pages/login';
 import { Home } from './pages/home';
+import { TopArtistsSongs } from './pages/top_artists_songs';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Login />} />
           <Route path = "/home" element = {<Home />} />
+          <Route path = "/viewSummary" element = {<TopArtistsSongs />} />
         </Routes>
       </Router>
     </div>
