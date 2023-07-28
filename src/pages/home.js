@@ -6,8 +6,6 @@ export const Home = () => {
 
     const [token, setToken] = useState("")
     const [displayName, setDisplayName] = useState("")
-
-    console.log("AFDSFSF")
     useEffect(() => {
         const hash = window.location.hash //from URL
         console.log(hash)
@@ -33,6 +31,8 @@ export const Home = () => {
        })
        console.log(data)
     }
+
+    getDisplayName()
 
 
 return (
