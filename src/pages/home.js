@@ -6,6 +6,16 @@ export const Home = () => {
 
     const [token, setToken] = useState("")
     const [displayName, setDisplayName] = useState("")
+
+    const getDisplayName = async () => {
+        const { data } = await axios.get("https://api.spotify.com/v1/me", {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        setDisplayName(data.display_name)
+    }
+    
     useEffect(() => {
         const hash = window.location.hash //from URL
         console.log(hash)
@@ -21,17 +31,10 @@ export const Home = () => {
 
         setToken(token)
         console.log(token)
+        getDisplayName()
     }, [])
 
-    const getDisplayName = async () => {
-        const { data } = await axios.get("https://api.spotify.com/v1/me", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-        setDisplayName(data.display_name)
-    }
-    getDisplayName()
+    
 
 
     return (
