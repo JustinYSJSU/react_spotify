@@ -21,7 +21,7 @@ export const Login = () => {
                         <p className="mb-1 h-1"> Spotify Summary</p>
                         <div className="d-flex flex-column ">
                             <div className="align-items-center">
-                                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`}
+                                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
                                 > <button className="btn btn-success"> Login with Spotify </button> </a>
                             </div>
                         </div>
