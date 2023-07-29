@@ -16,6 +16,7 @@ export const Home = () => {
             }
         })
         setDisplayName(data.display_name)
+        console.log(data)
     }
 
     useEffect(() => {
