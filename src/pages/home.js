@@ -10,12 +10,15 @@ export const Home = () => {
     const getDisplayName = async () => {
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
-                Authorization: `Bearer ${token}`
+                method: 'GET',
+                
+                Authorization: `Bearer ${token}`,
+
             }
         })
         setDisplayName(data.display_name)
     }
-    
+
     useEffect(() => {
         const hash = window.location.hash //from URL
         console.log(hash)
