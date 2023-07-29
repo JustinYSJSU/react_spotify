@@ -54,3 +54,9 @@
     flex: 1;
     margin-right: 10px; /* Add some space between select menus if needed */
 }
+
+.btn-2.btn-primary{
+    font-size: 12px;
+    width: 200px;
+    
+}
