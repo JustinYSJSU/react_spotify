@@ -55,7 +55,7 @@
     margin-right: 10px; /* Add some space between select menus if needed */
 }
 
-.btn-2.btn-success{
+.btn.btn-success{
     margin-top: 10px; /* Add some space between the menus and the button */
     font-size: 16px;
     padding: 10px 20px;
