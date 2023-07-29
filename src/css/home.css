@@ -42,8 +42,15 @@
     /* Optional: Customize text color */
 }
 
-.card-select{
+.card-select {
     margin-top: 30px;
     font-size: 18px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.select-wrapper {
+    flex: 1;
+    margin-right: 10px; /* Add some space between select menus if needed */
 }
