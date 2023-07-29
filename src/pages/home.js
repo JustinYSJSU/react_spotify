@@ -74,9 +74,9 @@ export const Home = () => {
 
                     <div className="select-wrapper">
                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                            <option selected> Time Period... </option>
-                            <option value="short_term"> Past Month </option>
-                            <option value="medium_term"> Past 6 Months  </option>
+                            <option selected> Past... </option>
+                            <option value="short_term"> Month </option>
+                            <option value="medium_term"> 6 Months </option>
                             <option value="long_term" > All Time </option>
                         </select>
                     </div>
