@@ -8,7 +8,7 @@ export const Home = () => {
     const [displayName, setDisplayName] = useState("")
 
     const getDisplayName = async () => {
-        console.log(`TOKEN: ${token}`)
+        console.log("Token: ", token)
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
                  Authorization: `Bearer ${token}`,
