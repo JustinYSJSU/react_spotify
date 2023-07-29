@@ -82,9 +82,10 @@ export const Home = () => {
                     </div>
 
                 </div>
+                <button className="btn btn-success"> Generate Summary </button>
             </div>
 
-            <button className="btn btn-success"> Generate Summary </button>
+            
         </div>
     )
 }
