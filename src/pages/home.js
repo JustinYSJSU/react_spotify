@@ -1,6 +1,7 @@
 import "../css/home.css"
 import axios from "axios"
 import { useState, useEffect } from "react"
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export const Home = () => {
 
@@ -83,7 +84,7 @@ export const Home = () => {
                 </div>
             </div>
 
-            <button className="btn-2 btn-primary"> Generate Summary </button>
+            <button className="btn-2 btn-success"> Generate Summary </button>
         </div>
     )
 }
