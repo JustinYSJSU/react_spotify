@@ -51,7 +51,7 @@ export const Home = () => {
                 </div>
 
                 <div className="card-body">
-                    Use the menu below to choose your category, number of items, and time range
+                    Use the menu below to choose your number of items, type, and time period 
                 </div>
 
                 <div className="card-select">
@@ -66,8 +66,8 @@ export const Home = () => {
 
                     <div className="select-wrapper">
                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                            <option selected> Category... </option>
-                            <option value="songs"> Songs </option>
+                            <option selected> Type... </option>
+                            <option value="tracks"> Songs </option>
                             <option value="artists"> Artists </option>
                         </select>
                     </div>
@@ -84,7 +84,7 @@ export const Home = () => {
                 </div>
             </div>
 
-            <button className="btn-2 btn-success"> Generate Summary </button>
+            <button className="btn btn-success"> Generate Summary </button>
         </div>
     )
 }
