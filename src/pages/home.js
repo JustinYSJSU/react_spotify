@@ -42,8 +42,6 @@ export const Home = () => {
     },[token])
 
     
-
-
     return (
         <div className="container">
             <div className="body-1 d-md-flex align-items-center justify-content-between">
@@ -56,20 +54,20 @@ export const Home = () => {
                 </div>
 
                 <div className="card-select">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
                         <option selected> Category... </option>
                         <option value="songs"> Songs </option>
                         <option value="artists"> Artists </option>
                     </select>
 
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
                         <option selected> Return Number... </option>
                         <option value="10"> 10 </option>
                         <option value="15"> 15 </option>
                         <option value="20"> 20 </option>
                     </select>
 
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
                         <option selected> Time Period... </option>
                         <option value="short_term"> Past Month </option>
                         <option value="medium_term"> Past 6 Months  </option>
