@@ -11,7 +11,7 @@ export const Home = () => {
         console.log("Token: ", token)
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
-                 Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`,
 
             }
         })
@@ -37,11 +37,11 @@ export const Home = () => {
         getDisplayName()
     }, [])
 
-    useEffect( () => {
+    useEffect(() => {
         token && getDisplayName()
-    },[token])
+    }, [token])
 
-    
+
     return (
         <div className="container">
             <div className="body-1 d-md-flex align-items-center justify-content-between">
@@ -55,33 +55,35 @@ export const Home = () => {
 
                 <div className="card-select">
                     <div className="select-wrapper">
-                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                        <option selected> Category... </option>
-                        <option value="songs"> Songs </option>
-                        <option value="artists"> Artists </option>
-                     </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                            <option selected> Top... </option>
+                            <option value="10"> 10 </option>
+                            <option value="15"> 15 </option>
+                            <option value="20"> 20 </option>
+                        </select>
                     </div>
 
-                   <div className="select-wrapper">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                        <option selected> Return Number... </option>
-                        <option value="10"> 10 </option>
-                        <option value="15"> 15 </option>
-                        <option value="20"> 20 </option>
-                    </select>
-                   </div>
+                    <div className="select-wrapper">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                            <option selected> Category... </option>
+                            <option value="songs"> Songs </option>
+                            <option value="artists"> Artists </option>
+                        </select>
+                    </div>
 
-                   <div className="select-wrapper">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                        <option selected> Time Period... </option>
-                        <option value="short_term"> Past Month </option>
-                        <option value="medium_term"> Past 6 Months  </option>
-                        <option value="long_term" > All Time </option>
-                    </select>
-                   </div>
+                    <div className="select-wrapper">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                            <option selected> Time Period... </option>
+                            <option value="short_term"> Past Month </option>
+                            <option value="medium_term"> Past 6 Months  </option>
+                            <option value="long_term" > All Time </option>
+                        </select>
+                    </div>
 
                 </div>
             </div>
+
+            <button className="btn-2 btn-primary"> Generate Summary </button>
         </div>
     )
 }
