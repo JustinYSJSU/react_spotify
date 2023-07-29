@@ -79,7 +79,7 @@ export const Home = () => {
                         <option value="long_term" > All Time </option>
                     </select>
                    </div>
-                   
+
                 </div>
             </div>
         </div>
