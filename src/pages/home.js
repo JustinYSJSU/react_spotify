@@ -36,6 +36,10 @@ export const Home = () => {
         getDisplayName()
     }, [])
 
+    useEffect( () => {
+        token && getDisplayName()
+    },[token])
+
     
 
 
