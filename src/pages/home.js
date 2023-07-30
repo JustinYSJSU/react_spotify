@@ -51,41 +51,46 @@ export const Home = () => {
                 </div>
 
                 <div className="card-body">
-                    Use the menu below to choose your number of items, type, and time period 
+                    Use the menu below to choose your number of items, type, and time period
                 </div>
 
-                <div className="card-select">
-                    <div className="select-wrapper">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                            <option selected> Top... </option>
-                            <option value="10"> 10 </option>
-                            <option value="15"> 15 </option>
-                            <option value="20"> 20 </option>
-                        </select>
-                    </div>
+                <form id="submitForm" class="card-select">
 
-                    <div className="select-wrapper">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                            <option selected> Type... </option>
-                            <option value="tracks"> Songs </option>
-                            <option value="artists"> Artists </option>
-                        </select>
-                    </div>
 
-                    <div className="select-wrapper">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
-                            <option selected> Past... </option>
-                            <option value="short_term"> Month </option>
-                            <option value="medium_term"> 6 Months </option>
-                            <option value="long_term" > All Time </option>
-                        </select>
-                    </div>
+                    <div className="card-select">
+                        <div className="select-wrapper">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                                <option selected> Top... </option>
+                                <option value="10"> 10 </option>
+                                <option value="15"> 15 </option>
+                                <option value="20"> 20 </option>
+                            </select>
+                        </div>
 
-                </div>
-                <button className="btn btn-success"> Generate Summary </button>
+                        <div className="select-wrapper">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                                <option selected> Type... </option>
+                                <option value="tracks"> Songs </option>
+                                <option value="artists"> Artists </option>
+                            </select>
+                        </div>
+
+                        <div className="select-wrapper">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                                <option selected> Past... </option>
+                                <option value="short_term"> Month </option>
+                                <option value="medium_term"> 6 Months </option>
+                                <option value="long_term" > All Time </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <button className="btn btn-success"> Generate Summary </button>
+
+                </form>
             </div>
 
-            
+
         </div>
     )
 }
