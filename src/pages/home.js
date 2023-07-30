@@ -23,7 +23,7 @@ export const Home = () => {
         setDisplayName(data.display_name)
         setUri(data.uri)
         console.log(data)
-        console.log(data.displayName)
+        console.log(data.display_name)
         console.log(data.uri)
     }
 
@@ -91,7 +91,7 @@ export const Home = () => {
 
                         <div className="select-wrapper">
                             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
-                                onChange={(e) => setTypeValue(e.target.value)} required>
+                                onChange={(e) => setPastValue(e.target.value)} required>
                                 <option selected> Past... </option>
                                 <option value="short_term"> Month </option>
                                 <option value="medium_term"> 6 Months </option>
