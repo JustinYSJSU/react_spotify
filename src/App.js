@@ -13,7 +13,8 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Login />} />
           <Route path = "/home" element = {<Home />} />
-          <Route path = "/viewSummary" element = {<TopArtistsSongs />} />
+          <Route path = "/viewSummary/:uri/:top/:type/:past" element = {<TopArtistsSongs />} />
+          
         </Routes>
       </Router>
     </div>
