@@ -3,7 +3,6 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap
 import { useNavigate } from "react-router-dom";
-import { type } from "os";
 
 export const Home = () => {
 
