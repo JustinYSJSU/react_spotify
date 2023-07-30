@@ -7,6 +7,10 @@ export const Home = () => {
 
     const [token, setToken] = useState("")
     const [displayName, setDisplayName] = useState("")
+    const [uri, setUri] = useState("")
+    const [topValue, setTopValue] = useState("")
+    const [typeValue, setTypeValue] = useState("")
+    const [pastValue, setPastValue] = useState("")
 
     const getDisplayName = async () => {
         console.log("Token: ", token)
@@ -17,7 +21,10 @@ export const Home = () => {
             }
         })
         setDisplayName(data.display_name)
+        setUri(data.uri)
         console.log(data)
+        console.log(data.displayName)
+        console.log(data.uri)
     }
 
     useEffect(() => {
@@ -43,6 +50,12 @@ export const Home = () => {
     }, [token])
 
 
+    const linkToSummary = () => {
+        console.log(topValue)
+        console.log(typeValue)
+        console.log(pastValue)
+    }
+
     return (
         <div className="container">
             <div className="body-1 d-md-flex align-items-center justify-content-between">
@@ -54,12 +67,11 @@ export const Home = () => {
                     Use the menu below to choose your number of items, type, and time period
                 </div>
 
-                <form id="submitForm">
-
-
+                <form id="submitForm" onSubmit={linkToSummary}>
                     <div className="card-select">
                         <div className="select-wrapper">
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                                onChange={(e) => setTopValue(e.target.value)} required>
                                 <option selected> Top... </option>
                                 <option value="10"> 10 </option>
                                 <option value="15"> 15 </option>
@@ -68,7 +80,9 @@ export const Home = () => {
                         </div>
 
                         <div className="select-wrapper">
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                                onChange={(e) => setTypeValue(e.target.value)} required>
+
                                 <option selected> Type... </option>
                                 <option value="tracks"> Songs </option>
                                 <option value="artists"> Artists </option>
@@ -76,7 +90,8 @@ export const Home = () => {
                         </div>
 
                         <div className="select-wrapper">
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                                onChange={(e) => setTypeValue(e.target.value)} required>
                                 <option selected> Past... </option>
                                 <option value="short_term"> Month </option>
                                 <option value="medium_term"> 6 Months </option>
@@ -86,7 +101,6 @@ export const Home = () => {
 
                     </div>
                     <button className="btn btn-success"> Generate Summary </button>
-
                 </form>
             </div>
 
