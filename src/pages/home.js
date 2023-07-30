@@ -54,7 +54,7 @@ export const Home = () => {
                     Use the menu below to choose your number of items, type, and time period
                 </div>
 
-                <form id="submitForm" class="card-select">
+                <form id="submitForm">
 
 
                     <div className="card-select">
