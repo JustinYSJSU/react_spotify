@@ -1,7 +1,9 @@
 import "../css/home.css"
 import axios from "axios"
 import { useState, useEffect } from "react"
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap
+import { useNavigate } from "react-router-dom";
+import { type } from "os";
 
 export const Home = () => {
 
@@ -11,6 +13,8 @@ export const Home = () => {
     const [topValue, setTopValue] = useState("")
     const [typeValue, setTypeValue] = useState("")
     const [pastValue, setPastValue] = useState("")
+
+    const navigate = useNavigate()
 
     const getDisplayName = async () => {
         console.log("Token: ", token)
@@ -51,9 +55,9 @@ export const Home = () => {
 
 
     const linkToSummary = () => {
-        console.log(topValue)
-        console.log(typeValue)
-        console.log(pastValue)
+        const date = new Date()
+        parseInt(topValue, 10)
+        navigate(`/viewSummary/${uri}/${displayName}/${topValue}/${typeValue}/${pastValue}/${date}`)
     }
 
     return (

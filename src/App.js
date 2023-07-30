@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Login } from './pages/login';
 import { Home } from './pages/home';
-import { TopArtistsSongs } from './pages/top_artists_songs';
+import { TopArtistsSongs } from './pages/summary';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Login />} />
           <Route path = "/home" element = {<Home />} />
-          <Route path = "/viewSummary/:uri/:top/:type/:past" element = {<TopArtistsSongs />} />
+          <Route path = "/viewSummary/:uri/:displayName/:top/:type/:past/:date" element = {<TopArtistsSongs />} />
           
         </Routes>
       </Router>
