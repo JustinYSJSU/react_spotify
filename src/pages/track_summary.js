@@ -43,39 +43,40 @@ export const TrackSummary = () => {
     }, [token])
 
     return (
-        <div className="container-summary mt-4">
-            <h2> Song List</h2>
-            <table className="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Number</th>
-                        <th>Song</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {trackList.map((track) => (
-                        <tr key={track.name} className="song-row">
-                            <td>{trackList.indexOf(track) + 1}</td>
-                            <td>
-                                <div className="media">
-                                    <img src={track.album.images[2].url} className="mr-3" alt={track.title} style={{ maxWidth: 100 }} />
-                                    <div className="media-body">
-                                        <h5 className="mt-0 song-title">{track.name}</h5>
-                                        {track.album.artists.map((artist) => (
-                                            <p className="faded-text">{artist.name}</p>
-                                        ))}
-                                        <div className="listen-now">
-                                            <a href={track.external_urls.spotify}>Listen Now</a>
+        <div className="table-container">
+            <div className="container-summary mt-4">
+                <h2> Song List</h2>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Song</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {trackList.map((track) => (
+                            <tr key={track.name} className="song-row">
+                                <td>{trackList.indexOf(track) + 1}</td>
+                                <td>
+                                    <div className="media">
+                                        <img src={track.album.images[2].url} className="mr-3" alt={track.title} style={{ maxWidth: 100 }} />
+                                        <div className="media-body">
+                                            <h5 className="mt-0 song-title">{track.name}</h5>
+                                            {track.album.artists.map((artist) => (
+                                                <p className="faded-text">{artist.name}</p>
+                                            ))}
+                                            <div className="listen-now">
+                                                <a href={track.external_urls.spotify}>Listen Now</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
-
 
     )
 
