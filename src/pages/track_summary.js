@@ -43,7 +43,7 @@ export const TrackSummary = () => {
     }, [token])
 
     return (
-        <div className="container mt-4">
+        <div className="container-summary mt-4">
             <h2> Song List</h2>
             <table className="table table-bordered">
                 <thead>
