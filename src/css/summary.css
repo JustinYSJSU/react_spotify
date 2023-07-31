@@ -1,6 +1,5 @@
 .track-container {
-    position: relative;
-    margin-top: 500px;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -10,6 +9,16 @@
     width: 500px;
 }
 
+.body-track{
+    
+        position: relative;
+        margin: 20px auto;
+        border: 1px solid #dddd;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      
+}
 .text-muted.artist {
     font-size: 14px;
 }
