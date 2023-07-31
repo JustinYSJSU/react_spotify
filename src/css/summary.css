@@ -39,20 +39,56 @@ h2{
   color: white;
 }
 
-@media screen and (max-width: 767px) {
+/* Add a media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 10px; /* Add some padding to the container to make it visually more appealing */
+  }
+
+  .table {
+    max-width: 100%; /* Modify the max-width to occupy the full screen width on mobile */
+  }
+
   .song-row {
-      height: auto; /* Let the row height adjust based on content */
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* Align the "Listen Now" section to the left */
+    height: auto; /* Remove the fixed height for table rows to allow them to expand as needed */
+    padding: 10px; /* Add some padding to the table rows to make it more spaced out */
+  }
+
+  .song-title {
+    max-width: 200px; /* Reduce the max-width for song titles to fit better on mobile */
+  }
+
+  img {
+    max-width: 60px; /* Adjust the size of the album cover image to fit better on mobile */
   }
 
   .listen-now {
-      position: static; /* Remove absolute positioning to let it flow with the content */
-      transform: none; /* Reset transform */
-      margin-top: 10px; /* Add some spacing between artist and "Listen Now" */
+    right: 10px; /* Adjust the right position of the "Listen Now" button for better alignment */
+  }
+  
+  h2 {
+    font-size: 24px; /* Reduce the font size of the h2 heading for mobile */
+  }
+
+  th, td {
+    font-size: 14px; /* Reduce the font size of the table headers and rows for mobile */
+  }
+
+  .faded-text {
+    font-size: 12px; /* Reduce the font size of the artist names for mobile */
+  }
+
+  /* Hide the table header on mobile to save space and only show the data */
+  thead {
+    display: none;
+  }
+
+  /* Add bottom border to each table row to visually separate the data on mobile */
+  tbody tr {
+    border-bottom: 1px solid #ddd;
   }
 }
+
 
 
 
