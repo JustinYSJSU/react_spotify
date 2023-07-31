@@ -62,9 +62,18 @@ h2{
     max-width: 60px; /* Adjust the size of the album cover image to fit better on mobile */
   }
 
-  .listen-now {
-    right: 10px; /* Adjust the right position of the "Listen Now" button for better alignment */
-  }
+ /* Adjust the "Listen Now" link positioning for mobile */
+ .listen-now {
+  position: static;
+  margin-top: 5px;
+}
+
+/* Center the "Listen Now" link text under the artist names */
+.artist-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   
   h2 {
     font-size: 24px; /* Reduce the font size of the h2 heading for mobile */
