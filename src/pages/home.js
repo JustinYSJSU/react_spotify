@@ -75,7 +75,7 @@ export const Home = () => {
                         <div className="select-wrapper">
                             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                                 onChange={(e) => setTopValue(e.target.value)} required>
-                                <option selected> Top... </option>
+                                <option value=""> Top... </option>
                                 <option value="10"> 10 </option>
                                 <option value="15"> 15 </option>
                                 <option value="20"> 20 </option>
@@ -86,7 +86,7 @@ export const Home = () => {
                             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                                 onChange={(e) => setTypeValue(e.target.value)} required>
 
-                                <option selected> Type... </option>
+                                <option value=""> Type... </option>
                                 <option value="tracks"> Songs </option>
                                 <option value="artists"> Artists </option>
                             </select>
@@ -95,7 +95,7 @@ export const Home = () => {
                         <div className="select-wrapper">
                             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                                 onChange={(e) => setPastValue(e.target.value)} required>
-                                <option selected> Past... </option>
+                                <option value=""> Past... </option>
                                 <option value="short_term"> Month </option>
                                 <option value="medium_term"> 6 Months </option>
                                 <option value="long_term" > All Time </option>
