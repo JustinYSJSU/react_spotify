@@ -81,9 +81,10 @@ export const TrackSummary = () => {
                         ))}
                     </tbody>
                 </table>
+                <button onClick={copyLink} className="btn btn-primary"> Copy Link </button>
             </div>
 
-            <button onClick={copyLink} className="btn btn-primary"> Copy Link </button>
+           
 
         </div>
 
