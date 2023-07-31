@@ -66,7 +66,7 @@ export const TrackSummary = () => {
                                     <td>{trackList.indexOf(track) + 1}</td>
                                     <td>
                                         <div className="media">
-                                            <img src={track.album.images[2].url} className="mr-3" alt={track.title} style={{ maxWidth: 100 }} />
+                                            <img src={track.album.images[2].url} className="img-mr-3" alt={track.title} style={{ maxWidth: 100 }} />
                                             <div className="media-body">
                                                 <h5 className="mt-0 song-title">{track.name}</h5>
                                                 {track.album.artists.map((artist) => (
