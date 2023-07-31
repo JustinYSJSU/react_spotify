@@ -1,0 +1,16 @@
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import "../css/summary.css"
+
+export const TrackSummary = () =>{
+    const {displayName} = useParams()
+    const {top} = useParams()
+    const {type} = useParams()
+    const {past} = useParams()
+
+    return(
+        <h1 className="initial">
+            {displayName} {top} {type} {past}
+         </h1>
+    )
+}

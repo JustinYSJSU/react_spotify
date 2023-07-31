@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Login } from './pages/login';
 import { Home } from './pages/home';
-import { Summary } from './pages/summary';
+import { Summary } from './pages/track_summary';
 
 function App() {
   return (
@@ -13,8 +13,9 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Login />} />
           <Route path = "/home" element = {<Home />} />
-          <Route path = "/viewSummary/:uri/:displayName/:top/:type/:past/:date" element = {<Summary />} />
-          
+          <Route path = "/viewSummary/:uri/:displayName/:top/tracks/:past/:date" element = {<TrackSummary />} />
+          <Route path = "/viewSummary/:uri/:displayName/:top/artists/:past/:date" element = {<ArtistSummary />} />
+
         </Routes>
       </Router>
     </div>

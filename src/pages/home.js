@@ -56,7 +56,9 @@ export const Home = () => {
     const linkToSummary = () => {
         const date = new Date()
         parseInt(topValue, 10)
-        navigate(`/viewSummary/${uri}/${displayName}/${topValue}/${typeValue}/${pastValue}/${date}`)
+        
+        typeValue === 'tracks' &&  navigate(`/viewSummary/${uri}/${displayName}/${topValue}/tracks/${pastValue}/${date}`)
+       
     }
 
     return (

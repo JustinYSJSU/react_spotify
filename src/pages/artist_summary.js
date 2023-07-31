@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import "../css/summary.css"
 
-export const Summary = () =>{
+export const ArtistSummary = () =>{
     const {displayName} = useParams()
     const {top} = useParams()
     const {type} = useParams()
