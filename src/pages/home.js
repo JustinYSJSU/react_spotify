@@ -58,7 +58,7 @@ export const Home = () => {
         parseInt(topValue, 10)
         
         typeValue === 'tracks' &&  navigate(`/viewSummary/${uri}/${displayName}/${topValue}/tracks/${pastValue}/${date}`)
-        typeValue === 'tracks' &&  navigate(`/viewSummary/${uri}/${displayName}/${topValue}/artists/${pastValue}/${date}`)
+        typeValue === 'artists' && navigate(`/viewSummary/${uri}/${displayName}/${topValue}/artists/${pastValue}/${date}`)
     }
 
     return (
