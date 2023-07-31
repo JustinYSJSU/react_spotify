@@ -45,7 +45,7 @@ export const TrackSummary = () => {
     return (
         <div className="table-container">
             <div className="container-summary mt-4">
-                <h2> Song List</h2>
+                <h2> {displayName}, here is your Spotify Summary! </h2>
                 <table className="table table-bordered">
                     <thead>
                         <tr>
