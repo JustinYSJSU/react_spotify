@@ -57,15 +57,15 @@ export const TrackSummary = () => {
                 <tbody>
                     {trackList.map((track) => (
                         <tr key={track.name} className="song-row">
-                            <td>{trackList.indexOf(track) + 1 }</td>
+                            <td>{trackList.indexOf(track) + 1}</td>
                             <td>
                                 <div className="media">
                                     <img src={track.album.images[2].url} className="mr-3" alt={track.title} style={{ maxWidth: 100 }} />
                                     <div className="media-body">
                                         <h5 className="mt-0">{track.name}</h5>
-                                        {track.album.artists.map( (artist) => {
-                                            return (<p className="faded-text">{artist} </p>)
-                                        })}
+                                        {track.album.artists.map((artist) => (
+                                            <p className="faded-text">{artist.name}</p>
+                                        ))}
 
                                         <div className="listen-now">
                                             <a href={track.external_urls.spotify}>Listen Now</a>
