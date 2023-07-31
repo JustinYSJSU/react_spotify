@@ -3,10 +3,17 @@ import { useParams } from "react-router-dom"
 import "../css/summary.css"
 
 export const ArtistSummary = () =>{
+    const [token, setToken] = useState("")
+    const [uri, setUri] = useState("")
+
     const {displayName} = useParams()
     const {top} = useParams()
     const {type} = useParams()
     const {past} = useParams()
+
+    const getArtistSummary = () => {
+
+    }
 
     useEffect(() => {
         const hash = window.location.hash //from URL
@@ -23,12 +30,12 @@ export const ArtistSummary = () =>{
 
         setToken(token)
         console.log(token)
-        getDisplayName()
     }, [])
 
     useEffect(() => {
-        token && getDisplayName()
+        token && getArtistSummary()
     }, [token])
+
     return(
         <h1 className="initial">
             {displayName} {top} {type} {past}
