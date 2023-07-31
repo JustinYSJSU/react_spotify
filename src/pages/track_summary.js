@@ -64,7 +64,7 @@ export const TrackSummary = () => {
                                     <div className="media-body">
                                         <h5 className="mt-0">{track.name}</h5>
                                         {track.album.artists.map( (artist) => {
-                                            <p className="faded-text">{artist} </p>
+                                            return (<p className="faded-text">{artist} </p>)
                                         })}
 
                                         <div className="listen-now">
