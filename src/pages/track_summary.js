@@ -54,7 +54,7 @@ export const TrackSummary = () =>{
                       </p>
 
                       {track.artists.map( (artist) => {
-                        return(<p className="text-muted">
+                        return(<p className="text-muted artist">
                             {artist.name}
                         </p>
                         )
