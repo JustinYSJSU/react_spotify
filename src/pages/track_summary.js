@@ -45,7 +45,7 @@ export const TrackSummary = () =>{
 
 
     return(
-        <div className="container">
+        <div className="track-container">
             {trackList.map( (track) => {
                 return(
                     <div className="summary-entry"> 
