@@ -8,8 +8,13 @@ export const TrackSummary = () => {
     const [trackList, setTrackList] = useState([])
     const { displayName } = useParams()
     const { top } = useParams()
-    const { type } = useParams()
     const { past } = useParams()
+
+    const url = location.href 
+
+    const copyLink = async () =>{
+        await navigator.clipboard.writeText(url)
+    }
 
     const getTrackSummary = async () => {
         const { data } = await axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${past}&limit=${top}`, {
@@ -76,6 +81,9 @@ export const TrackSummary = () => {
                     </tbody>
                 </table>
             </div>
+
+            <button onClick={copyLink} className="btn btn-primary"> Copy Link </button>
+            
         </div>
 
     )
