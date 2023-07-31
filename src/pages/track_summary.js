@@ -19,7 +19,6 @@ export const TrackSummary = () =>{
         })
         setTrackList(data.items)
     }
-    console.log(trackList)
     
     useEffect(() => {
         const hash = window.location.hash //from URL
@@ -45,8 +44,12 @@ export const TrackSummary = () =>{
 
 
     return(
-        <h1 className="initial">
-            {displayName} {top} {type} {past}
-         </h1>
+        <div className="container">
+            {trackList.map( (track) => {
+                return(
+                    <div> {track.name} </div>
+                )
+            })}
+        </div>
     )
 }
