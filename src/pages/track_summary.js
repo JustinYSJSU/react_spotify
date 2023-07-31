@@ -18,10 +18,9 @@ export const TrackSummary = () =>{
             }
         })
         setTrackList(data.items)
-        console.log(trackList)
-
     }
-
+    console.log(trackList)
+    
     useEffect(() => {
         const hash = window.location.hash //from URL
         console.log(hash)
