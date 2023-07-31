@@ -14,17 +14,13 @@
 .song-row {
     height: 80px;
     position: relative;
-    display: flex;
-    align-items: center;
   }
-
   .listen-now {
+    position: absolute;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    margin-left: auto;
   }
-  
   /* Custom CSS to style the faded artist names */
   .faded-text {
     color: #999;
@@ -37,7 +33,6 @@
     text-overflow: ellipsis;
     max-width: 300px;
     margin: 0 auto;
-    flex: 1;
   }
 
 h2{
