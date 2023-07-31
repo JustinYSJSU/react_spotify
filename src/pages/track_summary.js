@@ -5,7 +5,7 @@ import axios from "axios"
 
 export const TrackSummary = () =>{
     const [token, setToken] = useState("")
-
+    const [trackList, setTrackList] = useState([])
     const {displayName} = useParams()
     const {top} = useParams()
     const {type} = useParams()
@@ -17,7 +17,9 @@ export const TrackSummary = () =>{
                 Authorization: `Bearer ${token}`,
             }
         })
-        console.log(data)
+        const trackData = data.items
+        console.log(trackData)
+
     }
 
     useEffect(() => {
