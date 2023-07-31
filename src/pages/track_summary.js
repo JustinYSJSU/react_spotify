@@ -10,7 +10,7 @@ export const TrackSummary = () => {
     const { top } = useParams()
     const { past } = useParams()
 
-    const url = location.href 
+    const url = window.location.href 
 
     const copyLink = async () =>{
         await navigator.clipboard.writeText(url)
@@ -83,7 +83,7 @@ export const TrackSummary = () => {
             </div>
 
             <button onClick={copyLink} className="btn btn-primary"> Copy Link </button>
-            
+
         </div>
 
     )
