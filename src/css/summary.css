@@ -9,10 +9,7 @@
   align-items: center;
   height: 100vh; /* Set the height to occupy the full viewport */
 }
-.container-summary{
-  margin-top: 30px; /* Adjust this value as needed to move the table down */
-  position: relative;
-}
+
 .song-row {
     height: 80px;
     position: relative;
