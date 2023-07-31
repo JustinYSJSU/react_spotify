@@ -25,6 +25,7 @@ export const ArtistSummary = () =>{
         })
         setArtistList(data.items)
     }
+    console.log(artistList)
 
     useEffect(() => {
         const hash = window.location.hash //from URL
