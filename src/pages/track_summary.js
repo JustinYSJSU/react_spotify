@@ -57,7 +57,7 @@ export const TrackSummary = () => {
                 <tbody>
                     {trackList.map((track) => (
                         <tr key={track.name} className="song-row">
-                            <td>{track.id}</td>
+                            <td>{track.name}</td>
                             <td>
                                 <div className="media">
                                     <img src={track.album.images[2].url} className="mr-3" alt={track.title} style={{ maxWidth: 100 }} />
