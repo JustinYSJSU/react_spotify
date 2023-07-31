@@ -46,7 +46,7 @@ export const TrackSummary = () =>{
 
     return(
         <div className="track-container">
-            <div className="body-track d-md-flex align-items-center justify-content-between">
+            <div className="body-track">
             {trackList.map( (track) => {
                 return(
                     <div className="summary-entry"> 
