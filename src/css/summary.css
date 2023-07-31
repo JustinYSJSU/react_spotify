@@ -4,3 +4,7 @@
     color:black;
     width: 500px;
 }
+
+.text-muted.artist{
+    font-size: 14px;
+}
