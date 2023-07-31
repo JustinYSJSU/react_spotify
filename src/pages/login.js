@@ -8,7 +8,7 @@ export const Login = () => {
     const REDIRECT_URI = "https://react-spotify-mocha.vercel.app/home"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
-    const SCOPES = "user-read-private"
+    const SCOPES = "user-top-read"
 
     return (
         <div className="container">
@@ -21,7 +21,7 @@ export const Login = () => {
                         <p className="mb-1 h-1"> Spotify Summary</p>
                         <div className="d-flex flex-column ">
                             <div className="align-items-center">
-                                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+                                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`}
                                 > <button className="btn btn-success"> Login with Spotify </button> </a>
                             </div>
                         </div>
