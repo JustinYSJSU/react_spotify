@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set the height to occupy the full viewport */
+  min-height: 100vh; /* Set the height to occupy the full viewport */
 }
 
 .song-row {
