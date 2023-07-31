@@ -17,10 +17,9 @@ export const TrackSummary = () =>{
                 Authorization: `Bearer ${token}`,
             }
         })
-        const trackData = data.items
-        console.log(trackData)
-
+        setTrackList(data.items)
     }
+    console.log(trackList)
 
     useEffect(() => {
         const hash = window.location.hash //from URL
