@@ -6,6 +6,9 @@
     transform: translate(-50%, -50%);
 }
 
+.container.summary{
+    margin-top: 50px;
+}
 .song-row {
     height: 80px;
     position: relative;
