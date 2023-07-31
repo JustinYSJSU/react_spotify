@@ -9,3 +9,7 @@
 .text-muted.artist{
     font-size: 14px;
 }
+
+.btn.btn-success.track{
+    width: 200px;
+}
