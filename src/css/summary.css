@@ -5,3 +5,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.song-row {
+    height: 80px;
+    position: relative;
+  }
+  .listen-now {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+  /* Custom CSS to style the faded artist names */
+  .faded-text {
+    color: #999;
+    font-size: 14px;
+  }
+
+
+
+
