@@ -53,6 +53,8 @@ export const TrackSummary = () =>{
                         {track.name}
                       </p>
 
+                      <img src={track.album.images[2].url}/>
+
                       {track.artists.map( (artist) => {
                         return(<p className="text-muted artist">
                             {artist.name}
@@ -60,6 +62,7 @@ export const TrackSummary = () =>{
                         )
                       })}
 
+                    
                     </div>
                 )
             })}
