@@ -4,7 +4,8 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Login } from './pages/login';
 import { Home } from './pages/home';
-import { Summary } from './pages/track_summary';
+import { TrackSummary } from './pages/track_summary';
+import { ArtistSummary } from './pages/artist_summary';
 
 function App() {
   return (
