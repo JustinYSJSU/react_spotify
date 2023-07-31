@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import "../css/summary.css"
+import axios from "axios"
 
 export const TrackSummary = () =>{
     const [token, setToken] = useState("")
-    const [uri, setUri] = useState("")
 
     const {displayName} = useParams()
     const {top} = useParams()
     const {type} = useParams()
     const {past} = useParams()
 
-    const getTrackSummary = () =>{
-
+    const getTrackSummary = async () =>{
+      const { data } = await axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${past}&limit=${top}`,{
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+        console.log(data)
     }
 
     useEffect(() => {
