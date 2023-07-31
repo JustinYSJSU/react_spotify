@@ -61,10 +61,7 @@ export const TrackSummary = () =>{
                         </p>
                         )
                       })}
-
-                      <a href={track.external_urls.spotify}> <button className="btn btn-success"> Listen on Spotify </button></a>
-
-                    
+                      <a href={track.external_urls.spotify}> <button className="btn btn-success"> Listen on Spotify </button></a>                  
                     </div>
                 )
             })}
