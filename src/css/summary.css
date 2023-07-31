@@ -39,3 +39,21 @@ h2{
   color: white;
 }
 
+@media screen and (max-width: 767px) {
+  .song-row {
+      height: auto; /* Let the row height adjust based on content */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align the "Listen Now" section to the left */
+  }
+
+  .listen-now {
+      position: static; /* Remove absolute positioning to let it flow with the content */
+      transform: none; /* Reset transform */
+      margin-top: 10px; /* Add some spacing between artist and "Listen Now" */
+  }
+}
+
+
+
+
