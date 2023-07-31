@@ -14,6 +14,7 @@ export const TrackSummary = () => {
 
     const copyLink = async () =>{
         await navigator.clipboard.writeText(url)
+        alert("Link copied and ready to share!")
     }
 
     const getTrackSummary = async () => {
