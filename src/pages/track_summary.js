@@ -69,11 +69,13 @@ export const TrackSummary = () => {
                                             <img src={track.album.images[2].url} className="img-mr-3" alt={track.title} style={{ maxWidth: 100 }} />
                                             <div className="media-body">
                                                 <h5 className="mt-0 song-title">{track.name}</h5>
-                                                {track.album.artists.map((artist) => (
-                                                    <p className="faded-text">{artist.name}</p>
-                                                ))}
-                                                <div className="listen-now">
-                                                    <a href={track.external_urls.spotify}>Listen Now</a>
+                                                <div className="artist-details">
+                                                    {track.album.artists.map((artist) => (
+                                                        <p className="faded-text">{artist.name}</p>
+                                                    ))}
+                                                    <div className="listen-now">
+                                                        <a href={track.external_urls.spotify}>Listen Now</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
