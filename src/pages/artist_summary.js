@@ -4,15 +4,25 @@ import "../css/summary.css"
 
 export const ArtistSummary = () =>{
     const [token, setToken] = useState("")
-    const [uri, setUri] = useState("")
-
+    const [artistList, setArtistList] = useState([])
     const {displayName} = useParams()
     const {top} = useParams()
-    const {type} = useParams()
     const {past} = useParams()
 
-    const getArtistSummary = () => {
+    const url = window.location.href 
 
+    const copyLink = async () =>{
+        await navigator.clipboard.writeText(url)
+        alert("Link copied and ready to share!")
+    }
+
+    const getArtistSummary = async () => {
+        const { data } = await axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${past}&limit=${top}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+        setArtistList(data.items)
     }
 
     useEffect(() => {
@@ -27,7 +37,6 @@ export const ArtistSummary = () =>{
             window.localStorage.setItem("token", token)
 
         }
-
         setToken(token)
         console.log(token)
     }, [])
@@ -37,8 +46,6 @@ export const ArtistSummary = () =>{
     }, [token])
 
     return(
-        <h1 className="initial">
-            {displayName} {top} {type} {past}
-         </h1>
+        <h1> hi </h1>
     )
 }
