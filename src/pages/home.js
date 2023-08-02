@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 export const Home = () => {
 
     const TOKEN = "https://accounts.spotify.com/api/token"
-    var access_token = null
-    var refresh_token = null
     const client_id = "bd082bb71cdf43fdbe70dd6eb449d50d"
     const client_secret = "87e68dbedbab4d3cadb4142af2e91c06"
     const [displayName, setDisplayName] = useState("")
@@ -19,73 +17,19 @@ export const Home = () => {
 
     const navigate = useNavigate()
 
-    const onPageLoad = () =>{
-        if(window.location.search.length > 0){
-            handleRedirect()
+    useEffect( () =>{
+        var authParameters = {
+            method: "POSTT",
+            headers:{
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + client_secret
         }
-    }
 
-    const handleRedirect = () =>{
-        let code = getCode()
-        fetchAccessToken(code)
-
-    }
-
-    const getCode = () =>{
-        console.log("GET CODE")
-        let code = null
-        const queryString = window.location.search
-        if(queryString.length > 0){
-            const urlParams = new URLSearchParams(queryString)
-            code = urlParams.get('code')
-        }
-        return code
-    }
-
-    const fetchAccessToken = (code) =>{
-        console.log("FETCH ACCESS TOKEN")
-        let body = "grant_type=authorization_code"
-        body += "&code=" + code
-        body += "&redirect_uri=" + encodeURI("https://react-spotify-mocha.vercel.app/home")
-        body += "&client_id=" + "bd082bb71cdf43fdbe70dd6eb449d50d"
-        body += "&client_secret=" + "87e68dbedbab4d3cadb4142af2e91c06"
-        callAuthorizationApi(body)
-    }
-
-    const callAuthorizationApi = (body) =>{
-        console.log("CALL AUTH API")
-        let xhr = new XMLHttpRequest()
-        xhr.open("POST", TOKEN, true)
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-        xhr.setRequestHeader('Authorization', 'Basic ' + btoa(client_id + ":" + client_secret))
-        xhr.send(body)
-        xhr.onload = handleAuthorizationResponse
-    }
-
-    const handleAuthorizationResponse = () =>{
-        console.log("HANDLE AUTH RESP")
-       if(this.status === 200){
-        console.log("HELLO?")
-        var data = JSON.parse(this.responseText)
-        console.log(data)
-        var data = JSON.parse(this.responseText)
-        if(data.access_token != undefined){
-            access_token = data.access_token
-            localStorage.setItem("access_token", access_token)
-        }
-        if(data.refresh_token != undefined){
-            refresh_token = data.refresh_token
-            localStorage.setItem("refresh_token", refresh_token)
-        }
-        onPageLoad()
-       }
-       else{
-        console.log("WIUHUIHFDS")
-        console.log(this.responseText)
-       }
-    }
-
-    onPageLoad()
+        fetch('https://accounts.spotify.com/api/token', authParameters)
+        .then(result => result.json())
+        .then(data => console.log(data)) 
+    }, [])
 
     /*
     const getDisplayName = async () => {
