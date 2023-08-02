@@ -17,7 +17,6 @@ export const Login = () => {
     const REDIRECT_URI = "https://react-spotify-mocha.vercel.app/home"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
-    const SCOPES = "hi"
     var state = generateRandomString(16)
 
     const requestAuthorization = () => {
