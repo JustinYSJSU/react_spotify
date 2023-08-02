@@ -3,6 +3,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap
 import { useNavigate } from "react-router-dom";
+import { access } from "fs";
 
 export const Home = () => {
 
@@ -19,19 +20,23 @@ export const Home = () => {
 
     const getDisplayName = async () => {
         console.log("Token: ", accessToken)
-        const { data } = await axios.get("https://api.spotify.com/v1/me", {
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
-
+        var parameters = {
+            method: 'GET', 
+            headers:{
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + accessToken
             }
-        })
+        }
+        var name = await fetch("https://api.spotify.com/v1/me", parameters)
+        .then(result => result.json)
+        .then(data => setDisplayName(data.display_name))
         setDisplayName(data.display_name)
         setUri(data.uri)
         console.log(data)
         console.log(data.display_name)
         console.log(data.uri)
     }
-    
+
     useEffect( () =>{
         var authParameters = {
             method: "POST",
