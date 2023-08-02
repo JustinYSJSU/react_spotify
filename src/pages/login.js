@@ -1,14 +1,19 @@
-//<a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
-//> <button className="btn btn-success"> Login with Spotify </button> </a>
-
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import '../css/login.css'
+import React from 'react';
+import Cookies from 'js-cookie'
+import {SpotifyAuth, Scopes} from 'react-spotify-auth'
+import SpotifyApiContext from 'react-spotify-api'
+import 'react-spotify-auth/dist/index.css'
+
 export const Login = () => {
     const CLIENT_ID = "bd082bb71cdf43fdbe70dd6eb449d50d"
     const REDIRECT_URI = "https://react-spotify-mocha.vercel.app/home"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
     const SCOPES = "user-top-read"
+    const [token, setToken] = React.useState(Cookies.get("spotifyAuthToken"))
+
 
     return (
         <div className="container">
@@ -21,8 +26,12 @@ export const Login = () => {
                         <p className="mb-1 h-1"> Spotify Summary</p>
                         <div className="d-flex flex-column ">
                             <div className="align-items-center">
-                                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`}
-                                > <button className="btn btn-success"> Login with Spotify </button> </a>
+                                <SpotifyAuth
+                                  redirectUri="https://react-spotify-mocha.vercel.app/"
+                                  clientID="bd082bb71cdf43fdbe70dd6eb449d50d"
+                                  scopes={[Scopes.userReadTop]}
+                                  onAccessToken={(token) => setToken(token)}
+                                />
                             </div>
                         </div>
                     </div>
