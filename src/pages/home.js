@@ -14,48 +14,11 @@ export const Home = () => {
     const [topValue, setTopValue] = useState("")
     const [typeValue, setTypeValue] = useState("")
     const [pastValue, setPastValue] = useState("")
-    const [accessToken, setAccessToken] = useState("")
     const navigate = useNavigate()
 
-    const getDisplayName = async () => {
-        console.log("Token: ", accessToken);
-    
-        var parameters = {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            }
-        };
-    
-        await fetch("https://api.spotify.com/v1/me", parameters)
-            .then(result => result.json())
-            .then(data => {
-                setDisplayName(data.display_name);
-                setUri(data.uri);
-    
-                console.log(displayName);
-                console.log(uri);
-            });
-    };
-    
-    useEffect( () =>{
-        var authParameters = {
-            method: "POST",
-            headers:{
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: 'grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + client_secret
-        }
-
-        fetch('https://accounts.spotify.com/api/token', authParameters)
-        .then(result => result.json())
-        .then(data => setAccessToken(data.access_token))
-    }, [])
-
-    useEffect( () => {
-        accessToken && getDisplayName()
-    }, [accessToken])
-
+    const url = window.local.href 
+    const params = new URLSearchParams(url)
+    const accessToken = params.get("access_token")
     console.log(accessToken)
 
     const linkToSummary = () => {
