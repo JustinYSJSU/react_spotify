@@ -19,7 +19,12 @@ export const Home = () => {
     const url = window.location.href 
     const params = new URLSearchParams(url)
     const accessToken = params.get("access_token")
-    console.log(accessToken)
+    if (accessToken) {
+        // Now you have the access token, and you can use it in your app
+        console.log("Access Token:", accessToken);
+      } else {
+        console.log("Access token not found in the URL.");
+      }
 
     const linkToSummary = () => {
         const date = new Date()
