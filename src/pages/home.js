@@ -29,6 +29,7 @@ export const Home = () => {
         fetch('https://accounts.spotify.com/api/token', authParameters)
         .then(result => result.json())
         .then(data => setAccessToken(data.access_token))
+        getDisplayName()
     }, [])
 
     useEffect( () => {
@@ -37,7 +38,6 @@ export const Home = () => {
 
     console.log(accessToken)
 
-    
     const getDisplayName = async () => {
         console.log("Token: ", accessToken)
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
