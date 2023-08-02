@@ -85,7 +85,6 @@ export const Home = () => {
        }
     }
 
-    onPageLoad()
     /*
     const getDisplayName = async () => {
         console.log("Token: ", access_token)
