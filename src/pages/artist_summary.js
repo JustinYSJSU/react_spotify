@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import "../css/summary.css"
 import axios from "axios"
+import { access } from "fs"
 
 export const ArtistSummary = () => {
     const [token, setToken] = useState("")
@@ -11,6 +12,7 @@ export const ArtistSummary = () => {
     const { past } = useParams()
     const {accessToken} = useParams()
 
+    console.log(accessToken)
     const url = window.location.href
 
     const copyLink = async () => {
