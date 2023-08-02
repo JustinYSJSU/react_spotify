@@ -16,15 +16,11 @@ export const Home = () => {
     const [pastValue, setPastValue] = useState("")
     const navigate = useNavigate()
 
-    const url = window.location.hash
-    const params = new URLSearchParams(url)
-    const accessToken = params.get("access_token")
-    if (accessToken) {
-        // Now you have the access token, and you can use it in your app
-        console.log("Access Token:", accessToken);
-      } else {
-        console.log("Access token not found in the URL.");
-      }
+    const url = new URL(window.location.href)
+    const hashFragment = url.hash.substring(1)
+    const params = new URLSearchParams(hashFragment);
+    const accessToken = params.get("access_token");
+    console.log(accessToken)
 
     const linkToSummary = () => {
         const date = new Date()
