@@ -30,6 +30,11 @@ export const Home = () => {
         .then(result => result.json())
         .then(data => setAccessToken(data.access_token))
     }, [])
+
+    useEffect( () => {
+        accessToken && getDisplayName()
+    }, [token])
+    
     console.log(accessToken)
 
     
