@@ -32,9 +32,9 @@ export const Home = () => {
     }, [])
     console.log(accessToken)
 
-    /*
+    
     const getDisplayName = async () => {
-        console.log("Token: ", access_token)
+        console.log("Token: ", accessToken)
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
                 Authorization: `Bearer ${access_token}`,
@@ -47,10 +47,6 @@ export const Home = () => {
         console.log(data.display_name)
         console.log(data.uri)
     }
-    */
-
-    
-
 
     const linkToSummary = () => {
         const date = new Date()
