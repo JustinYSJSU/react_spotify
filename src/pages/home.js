@@ -23,7 +23,7 @@ export const Home = () => {
         var parameters = {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + accessToken
+                Authorization: `Bearer ${accessToken}`
             }
         };
     
