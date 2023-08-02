@@ -8,7 +8,6 @@ export const Login = () => {
     const RESPONSE_TYPE = "token"
     const SCOPES = "&scope=user-top-read"
     const AUTHORIZE = "https://accounts.spotify.com/authorize"
-  
 
     const requestAuthorization = () =>{
         let url = AUTHORIZE
