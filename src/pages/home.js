@@ -33,8 +33,8 @@ export const Home = () => {
 
     useEffect( () => {
         accessToken && getDisplayName()
-    }, [token])
-    
+    }, [accessToken])
+
     console.log(accessToken)
 
     
