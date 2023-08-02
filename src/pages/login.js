@@ -2,24 +2,37 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import '../css/login.css'
 
 export const Login = () => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const generateRandomString = (length) => {
+        let result = ' ';
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
     const CLIENT_ID = "bd082bb71cdf43fdbe70dd6eb449d50d"
     const REDIRECT_URI = "https://react-spotify-mocha.vercel.app/home"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
-    const SCOPES = "&scope=user-top-read"
-    const AUTHORIZE = "https://accounts.spotify.com/authorize"
+    const SCOPES = "user-top-read"
+    var state = generateRandomString(16)
 
-    const requestAuthorization = () =>{
-        let url = AUTHORIZE
-        url += "?client_id=" + CLIENT_ID
-        url += "&response_type=code"
-        url += "&redirect_uri=" + encodeURI(REDIRECT_URI)
-        url += "&show_dialog=true"
-        url += SCOPES
+    const requestAuthorization = () => {
+        let url = "https://accounts.spotify.com/authorize"
+        url += "?response_type=token"
+        url += "&client_id=" + encodeURIComponent(CLIENT_ID)
+        url += "&scope=" + encodeURIComponent(SCOPES)
+        url += "&redirect_uri=" = encodeURIComponent(REDIRECT_URI)
+        url += "&state=" + encodeURIComponent(state)
         window.location.href = url
     }
 
-    return (
+    
+
+    return
+     (
         <div className="container">
             <div className="body d-md-flex align-items-center justify-content-between">
                 <div className="box-1 mt-md-0 mt-5">
@@ -29,8 +42,8 @@ export const Login = () => {
                     <div className="mt-5">
                         <p className="mb-1 h-1"> Spotify Summary</p>
                         <div className="d-flex flex-column ">
-                            <div className="align-items-center">                               
-                              <button className="btn btn-success" onClick={requestAuthorization}> Login with Spotify </button> 
+                            <div className="align-items-center">
+                                <button className="btn btn-success" onClick={requestAuthorization}> Login with Spotify </button>
                             </div>
                         </div>
                     </div>
