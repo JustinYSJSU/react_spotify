@@ -23,7 +23,7 @@ export const Login = () => {
         let url = "https://accounts.spotify.com/authorize"
         url += "?response_type=token"
         url += "&client_id=" + encodeURIComponent(CLIENT_ID)
-        url += "&scope=" + encodeURIComponent(SCOPES)
+        //url += "&scope=" + encodeURIComponent(SCOPES)
         url += "&redirect_uri=" + encodeURIComponent(REDIRECT_URI)
         url += "&state=" + encodeURIComponent(state)
         window.location.href = url
