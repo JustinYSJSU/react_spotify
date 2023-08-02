@@ -13,9 +13,9 @@ export const Login = () => {
     const requestAuthorization = () =>{
         let url = AUTHORIZE
         url += "?client_id=" + CLIENT_ID
-        url += "&response_type=code"
+        url += "&response_type=token"
         url += "&redirect_uri=" + encodeURI(REDIRECT_URI)
-        url += "show_dialog=true"
+        url += "&show_dialog=true"
         url += SCOPES
         window.location.href = url
     }
