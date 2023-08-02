@@ -27,6 +27,7 @@ export const ArtistSummary = () => {
         setArtistList(data.items)
     }
     
+    getArtistSummary()
     return (
         <div className="table-container">
             <div className="container-summary mt-4">

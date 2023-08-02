@@ -25,7 +25,8 @@ export const TrackSummary = () => {
         })
         setTrackList(data.items)
     }
-    console.log(trackList)
+    
+    getTrackSummary()
 
     return (
         <div className="table-container">
