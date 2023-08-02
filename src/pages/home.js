@@ -17,6 +17,21 @@ export const Home = () => {
     const [accessToken, setAccessToken] = useState("")
     const navigate = useNavigate()
 
+    const getDisplayName = async () => {
+        console.log("Token: ", accessToken)
+        const { data } = await axios.get("https://api.spotify.com/v1/me", {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+
+            }
+        })
+        setDisplayName(data.display_name)
+        setUri(data.uri)
+        console.log(data)
+        console.log(data.display_name)
+        console.log(data.uri)
+    }
+    
     useEffect( () =>{
         var authParameters = {
             method: "POST",
@@ -38,20 +53,7 @@ export const Home = () => {
 
     console.log(accessToken)
 
-    const getDisplayName = async () => {
-        console.log("Token: ", accessToken)
-        const { data } = await axios.get("https://api.spotify.com/v1/me", {
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
-
-            }
-        })
-        setDisplayName(data.display_name)
-        setUri(data.uri)
-        console.log(data)
-        console.log(data.display_name)
-        console.log(data.uri)
-    }
+    
 
     const linkToSummary = () => {
         const date = new Date()
