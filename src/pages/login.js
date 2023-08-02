@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import '../css/login.css'
 
 export const Login = () => {
+
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const generateRandomString = (length) => {
         let result = ' ';
@@ -29,11 +30,8 @@ export const Login = () => {
         window.location.href = url
     }
 
-    
-
-    return
-     (
-        <div className="container">
+    return(
+      <div className="container">
             <div className="body d-md-flex align-items-center justify-content-between">
                 <div className="box-1 mt-md-0 mt-5">
                     <img src="https://images.pexels.com/photos/2033997/pexels-photo-2033997.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
@@ -53,5 +51,5 @@ export const Login = () => {
             </div>
         </div>
     )
-
+    
 }
