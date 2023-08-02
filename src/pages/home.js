@@ -44,7 +44,7 @@ export const Home = () => {
     const fetchAccessToken = (code) =>{
         let body = "grant_type=authorization_code"
         body += "&code=" + code
-        body += "&redirect_uri" + encodeURI("https://react-spotify-mocha.vercel.app/home")
+        body += "&redirect_uri=" + encodeURI("https://react-spotify-mocha.vercel.app/home")
         body += "&client_id=" + "bd082bb71cdf43fdbe70dd6eb449d50d"
         body += "&client_secret=" + "87e68dbedbab4d3cadb4142af2e91c06"
         callAuthorizationApi(body)
@@ -56,7 +56,7 @@ export const Home = () => {
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         xhr.setRequestHeader('Authorization', 'Basic ' + btoa(client_id + ":" + client_secret))
         xhr.send(body)
-        xhr.onload = handleAuthorizationResponse()
+        xhr.onload = handleAuthorizationResponse
     }
 
     const handleAuthorizationResponse = () =>{
@@ -72,12 +72,14 @@ export const Home = () => {
             refresh_token = data.refresh_token
             localStorage.setItem("refresh_token", refresh_token)
         }
+        onPageLoad()
        }
        else{
         console.log(this.responseText)
        }
     }
 
+    /*
     const getDisplayName = async () => {
         console.log("Token: ", access_token)
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
@@ -92,6 +94,7 @@ export const Home = () => {
         console.log(data.display_name)
         console.log(data.uri)
     }
+    */
 
     
 
