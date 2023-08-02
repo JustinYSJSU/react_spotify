@@ -29,8 +29,8 @@ export const Home = () => {
         fetch('https://accounts.spotify.com/api/token', authParameters)
         .then(result => result.json())
         .then(data => setAccessToken(data.access_token))
-        console.log(accessToken)
     }, [])
+    console.log(accessToken)
 
     /*
     const getDisplayName = async () => {
