@@ -29,9 +29,7 @@ export const Home = () => {
         }
         var name = await fetch("https://api.spotify.com/v1/me", parameters)
         .then(result => result.json)
-        .then(data => setDisplayName(data.display_name))
-        setDisplayName(data.display_name)
-        setUri(data.uri)
+        .then(data => setDisplayName(data.display_name), setUri(data.uri))
         console.log(data)
         console.log(data.display_name)
         console.log(data.uri)
