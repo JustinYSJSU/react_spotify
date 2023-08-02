@@ -22,16 +22,14 @@ export const Home = () => {
         var parameters = {
             method: 'GET', 
             headers:{
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + accessToken
+                     'Authorization': 'Bearer ' + accessToken
             }
         }
         var name = await fetch("https://api.spotify.com/v1/me", parameters)
         .then(result => result.json())
         .then(data => setDisplayName(data.display_name), setUri(data.uri))
-        console.log(data)
-        console.log(data.display_name)
-        console.log(data.uri)
+        console.log(displayName)
+        console.log(uri) 
     }
 
     useEffect( () =>{
