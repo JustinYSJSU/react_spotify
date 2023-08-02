@@ -38,7 +38,6 @@ export const Home = () => {
             });
     };
     
-
     useEffect( () =>{
         var authParameters = {
             method: "POST",
@@ -60,7 +59,7 @@ export const Home = () => {
     console.log(accessToken)
 
     
-
+    getDisplayName()
     const linkToSummary = () => {
         const date = new Date()
         parseInt(topValue, 10)
