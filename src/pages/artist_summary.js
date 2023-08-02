@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import "../css/summary.css"
 import axios from "axios"
-import { access } from "fs"
 
 export const ArtistSummary = () => {
     const [token, setToken] = useState("")
