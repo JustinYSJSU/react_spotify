@@ -14,7 +14,7 @@ export const Home = () => {
     const [topValue, setTopValue] = useState("")
     const [typeValue, setTypeValue] = useState("")
     const [pastValue, setPastValue] = useState("")
-
+    const [accessToken, setAccessToken] = useState("")
     const navigate = useNavigate()
 
     useEffect( () =>{
@@ -28,7 +28,8 @@ export const Home = () => {
 
         fetch('https://accounts.spotify.com/api/token', authParameters)
         .then(result => result.json())
-        .then(data => console.log(data)) 
+        .then(data => setAccessToken(data.access_token))
+        console.log(accessToken)
     }, [])
 
     /*
