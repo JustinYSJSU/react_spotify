@@ -9,6 +9,8 @@ export const Home = () => {
     const TOKEN = "https://accounts.spotify.com/api/token"
     var access_token = null
     var refresh_token = null
+    const client_id = "bd082bb71cdf43fdbe70dd6eb449d50d"
+    const client_secret = "87e68dbedbab4d3cadb4142af2e91c06"
     const [displayName, setDisplayName] = useState("")
     const [uri, setUri] = useState("")
     const [topValue, setTopValue] = useState("")
@@ -39,7 +41,7 @@ export const Home = () => {
         return code
     }
 
-    const fetchAccessToken = () =>{
+    const fetchAccessToken = (code) =>{
         let body = "grant_type=authorization_code"
         body += "&code=" + code
         body += "&redirect_uri" + encodeURI("https://react-spotify-mocha.vercel.app/home")
@@ -75,12 +77,12 @@ export const Home = () => {
         console.log(this.responseText)
        }
     }
-    
+
     const getDisplayName = async () => {
-        console.log("Token: ", token)
+        console.log("Token: ", access_token)
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${access_token}`,
 
             }
         })
