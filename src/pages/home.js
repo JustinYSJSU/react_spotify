@@ -16,7 +16,7 @@ export const Home = () => {
     const [pastValue, setPastValue] = useState("")
     const navigate = useNavigate()
 
-    const url = window.local.href 
+    const url = window.location.href 
     const params = new URLSearchParams(url)
     const accessToken = params.get("access_token")
     console.log(accessToken)
