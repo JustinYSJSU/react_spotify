@@ -36,7 +36,7 @@ export const TrackSummary = () => {
         if (!token && hash) { //no token, but hash. get the token from the hash using .split() and .find() 
             token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token"))?.split("=")[1]
             window.location.hash = ""
-            window.localStorage.setItem("token", token)
+            //window.localStorage.setItem("token", token)
 
         }
 
