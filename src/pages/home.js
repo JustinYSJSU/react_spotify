@@ -3,12 +3,10 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap
 import { useNavigate } from "react-router-dom";
+import { access } from "fs";
 
 export const Home = () => {
 
-    const TOKEN = "https://accounts.spotify.com/api/token"
-    const client_id = "bd082bb71cdf43fdbe70dd6eb449d50d"
-    const client_secret = "87e68dbedbab4d3cadb4142af2e91c06"
     const [displayName, setDisplayName] = useState("")
     const [uri, setUri] = useState("")
     const [topValue, setTopValue] = useState("")
@@ -22,6 +20,20 @@ export const Home = () => {
     const accessToken = params.get("access_token");
     console.log(accessToken)
 
+    const getUser = async() =>{
+        console.log("Token: ", token)
+        const { data } = await axios.get("https://api.spotify.com/v1/me", {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            }
+        })
+        setDisplayName(data.display_name)
+        setUri(data.uri)
+        console.log(data)
+        console.log(data.display_name)
+        console.log(data.uri)
+    }
+
     const linkToSummary = () => {
         const date = new Date()
         parseInt(topValue, 10)
@@ -30,6 +42,7 @@ export const Home = () => {
         typeValue === 'artists' && navigate(`/viewSummary/${uri}/${displayName}/${topValue}/artists/${pastValue}/${date}`)
     }
 
+    getUser()
     return (
         <div className="container">
             <div className="body-1 d-md-flex align-items-center justify-content-between">
