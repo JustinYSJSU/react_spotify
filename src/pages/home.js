@@ -85,6 +85,8 @@ export const Home = () => {
        }
     }
 
+    onPageLoad()
+
     /*
     const getDisplayName = async () => {
         console.log("Token: ", access_token)
@@ -114,7 +116,6 @@ export const Home = () => {
     }
 
     return (
-      <body onLoad={onPageLoad}>
         <div className="container">
             <div className="body-1 d-md-flex align-items-center justify-content-between">
                 <div className="card-header">
@@ -162,6 +163,5 @@ export const Home = () => {
                 </form>
             </div>
         </div>
-    </body>
     )
 }
