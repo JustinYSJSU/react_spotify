@@ -63,7 +63,7 @@ export const Home = () => {
     }
 
     const handleAuthorizationResponse = () =>{
-        console.log9("HANDLE AUTH RESP")
+        console.log("HANDLE AUTH RESP")
        if(this.status == 200){
         console.log("HELLO?")
         var data = JSON.parse(this.responseText)
