@@ -114,7 +114,8 @@ export const Home = () => {
     }
 
     return (
-        <div className="container" onLoad={onPageLoad}>
+      <body onLoad={onPageLoad}>
+        <div className="container">
             <div className="body-1 d-md-flex align-items-center justify-content-between">
                 <div className="card-header">
                     Welcome to Spotify Summary, {displayName}!
@@ -160,8 +161,7 @@ export const Home = () => {
                     <button className="btn btn-success"> Generate Summary </button>
                 </form>
             </div>
-
-
         </div>
+    </body>
     )
 }
