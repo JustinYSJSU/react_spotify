@@ -76,6 +76,7 @@ export const Home = () => {
         onPageLoad()
        }
        else{
+        console.log("WIUHUIHFDS")
         console.log(this.responseText)
        }
     }
