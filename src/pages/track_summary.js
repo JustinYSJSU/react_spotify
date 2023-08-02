@@ -10,6 +10,7 @@ export const TrackSummary = () => {
     const { past } = useParams()
     const {accessToken} = useParams()
 
+    console.log(accessToken)
     const url = window.location.href
 
     const copyLink = async () => {
