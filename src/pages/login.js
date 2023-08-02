@@ -1,19 +1,24 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import '../css/login.css'
-import React from 'react';
-import Cookies from 'js-cookie'
-import {SpotifyAuth, Scopes} from 'react-spotify-auth'
-import SpotifyApiContext from 'react-spotify-api'
-import 'react-spotify-auth/dist/index.css'
 
 export const Login = () => {
     const CLIENT_ID = "bd082bb71cdf43fdbe70dd6eb449d50d"
     const REDIRECT_URI = "https://react-spotify-mocha.vercel.app/home"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
-    const SCOPES = "user-top-read"
-    const [token, setToken] = React.useState(Cookies.get("spotifyAuthToken"))
+    const SCOPES = "&scope=user-top-read"
+    const AUTHORIZE = "https://accounts.spotify.com/authorize"
+  
 
+    const requestAuthorization = () =>{
+        let url = AUTHORIZE
+        url += "?client_id" + CLIENT_ID
+        url += "&response_type=code"
+        url += "&redirect_uri=" + encodeURI(REDIRECT_URI)
+        url += "show_dialog=true"
+        url += SCOPES
+        window.location.href = url
+    }
 
     return (
         <div className="container">
@@ -25,13 +30,8 @@ export const Login = () => {
                     <div className="mt-5">
                         <p className="mb-1 h-1"> Spotify Summary</p>
                         <div className="d-flex flex-column ">
-                            <div className="align-items-center">
-                                <SpotifyAuth
-                                  redirectUri="https://react-spotify-mocha.vercel.app/"
-                                  clientID="bd082bb71cdf43fdbe70dd6eb449d50d"
-                                  scopes={[Scopes.userReadTop]}
-                                  onAccessToken={(token) => setToken(token)}
-                                />
+                            <div className="align-items-center">                               
+                              <button className="btn btn-success" onClick={requestAuthorization}> Login with Spotify </button> 
                             </div>
                         </div>
                     </div>
