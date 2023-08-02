@@ -20,7 +20,6 @@ export const Home = () => {
     console.log(accessToken)
 
     const getUser = async() =>{
-        console.log("Token: ", token)
         const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
