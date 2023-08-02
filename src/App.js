@@ -14,8 +14,8 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Login />} />
           <Route path = "/home" element = {<Home />} />
-          <Route path = "/viewSummary/:uri/:displayName/:top/tracks/:past/:date" element = {<TrackSummary />} />
-          <Route path = "/viewSummary/:uri/:displayName/:top/artists/:past/:date" element = {<ArtistSummary />} />
+          <Route path = "/viewSummary/:uri/:displayName/:top/tracks/:past/:date/:accessToken" element = {<TrackSummary />} />
+          <Route path = "/viewSummary/:uri/:displayName/:top/artists/:past/:date/:accessToken" element = {<ArtistSummary />} />
 
         </Routes>
       </Router>

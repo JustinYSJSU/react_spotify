@@ -9,6 +9,7 @@ export const ArtistSummary = () => {
     const { displayName } = useParams()
     const { top } = useParams()
     const { past } = useParams()
+    const {accessToken} = useParams()
 
     const url = window.location.href
 
@@ -20,33 +21,12 @@ export const ArtistSummary = () => {
     const getArtistSummary = async () => {
         const { data } = await axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${past}&limit=${top}`, {
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${accessToken}`,
             }
         })
         setArtistList(data.items)
     }
-    console.log(artistList)
-
-    useEffect(() => {
-        const hash = window.location.hash //from URL
-        console.log(hash)
-        let token = window.localStorage.getItem("token")
-        console.log(token)
-
-        if (!token && hash) { //no token, but hash. get the token from the hash using .split() and .find() 
-            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token"))?.split("=")[1]
-            window.location.hash = ""
-            window.localStorage.setItem("token", token)
-
-        }
-        setToken(token)
-        console.log(token)
-    }, [])
-
-    useEffect(() => {
-        token && getArtistSummary()
-    }, [token])
-
+    
     return (
         <div className="table-container">
             <div className="container-summary mt-4">

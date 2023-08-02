@@ -36,8 +36,8 @@ export const Home = () => {
         const date = new Date()
         parseInt(topValue, 10)
         
-        typeValue === 'tracks' &&  navigate(`/viewSummary/${uri}/${displayName}/${topValue}/tracks/${pastValue}/${date}`)
-        typeValue === 'artists' && navigate(`/viewSummary/${uri}/${displayName}/${topValue}/artists/${pastValue}/${date}`)
+        typeValue === 'tracks' &&  navigate(`/viewSummary/${uri}/${displayName}/${topValue}/tracks/${pastValue}/${date}/${accessToken}`)
+        typeValue === 'artists' && navigate(`/viewSummary/${uri}/${displayName}/${topValue}/artists/${pastValue}/${date}/${accessToken}`)
     }
 
     getUser()
