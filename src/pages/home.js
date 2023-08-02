@@ -32,6 +32,7 @@ export const Home = () => {
     }
 
     const getCode = () =>{
+        console.log("GET CODE")
         let code = null
         const queryString = window.location.search
         if(queryString.length > 0){
@@ -42,6 +43,7 @@ export const Home = () => {
     }
 
     const fetchAccessToken = (code) =>{
+        console.log("FETCH ACCESS TOKEN")
         let body = "grant_type=authorization_code"
         body += "&code=" + code
         body += "&redirect_uri=" + encodeURI("https://react-spotify-mocha.vercel.app/home")
@@ -51,6 +53,7 @@ export const Home = () => {
     }
 
     const callAuthorizationApi = (body) =>{
+        console.log("CALL AUTH API")
         let xhr = new XMLHttpRequest()
         xhr.open("POST", TOKEN, true)
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
@@ -60,6 +63,7 @@ export const Home = () => {
     }
 
     const handleAuthorizationResponse = () =>{
+        console.log9("HANDLE AUTH RESP")
        if(this.status == 200){
         console.log("HELLO?")
         var data = JSON.parse(this.responseText)
@@ -81,6 +85,7 @@ export const Home = () => {
        }
     }
 
+    onPageLoad()
     /*
     const getDisplayName = async () => {
         console.log("Token: ", access_token)
