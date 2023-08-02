@@ -18,20 +18,26 @@ export const Home = () => {
     const navigate = useNavigate()
 
     const getDisplayName = async () => {
-        console.log("Token: ", accessToken)
+        console.log("Token: ", accessToken);
+    
         var parameters = {
-            method: 'GET', 
-            headers:{
-                     'Authorization': 'Bearer ' + accessToken
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken
             }
-        }
-        var name = await fetch("https://api.spotify.com/v1/me", parameters)
-        .then(result => result.json())
-        .then(data => {setDisplayName(data.display_name), setUri(data.uri)
-        console.log(displayName)
-        console.log(uri) 
-        })
-    }
+        };
+    
+        await fetch("https://api.spotify.com/v1/me", parameters)
+            .then(result => result.json())
+            .then(data => {
+                setDisplayName(data.display_name);
+                setUri(data.uri);
+    
+                console.log(displayName);
+                console.log(uri);
+            });
+    };
+    
 
     useEffect( () =>{
         var authParameters = {
