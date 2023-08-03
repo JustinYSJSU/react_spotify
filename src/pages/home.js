@@ -20,19 +20,19 @@ export const Home = () => {
     console.log(accessToken)
 
     const getUser = async() =>{
-        const { data } = await axios.get("https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=10", {
+        const { data } = await axios.get("https://api.spotify.com/v1/me", {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             }
         })
 
         console.log(data)
-        /*setDisplayName(data.display_name)
+        setDisplayName(data.display_name)
         setUri(data.uri)
         console.log(data)
         console.log(data.display_name)
         console.log(data.uri)
-        */
+        
     }
 
     const linkToSummary = () => {
