@@ -33,7 +33,6 @@ export const Home = () => {
         console.log(data)
         console.log(data.display_name)
         console.log(data.uri)
-       
     }
 
     const linkToSummary = () => {
