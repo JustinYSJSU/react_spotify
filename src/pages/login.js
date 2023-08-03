@@ -17,15 +17,14 @@ export const Login = () => {
     const REDIRECT_URI = "https://react-spotify-mocha.vercel.app/home"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
-    //const SCOPES = "user-top-read"
-    const SCOPES = "user-follow-read"
+    const SCOPES = "user-top-read"
     var state = generateRandomString(16)
 
     const requestAuthorization = () => {
         let url = "https://accounts.spotify.com/authorize"
         url += "?response_type=token"
         url += "&client_id=" + encodeURIComponent(CLIENT_ID)
-        //url += "&scope=" + encodeURIComponent(SCOPES)
+        url += "&scope=" + encodeURIComponent(SCOPES)
         url += "&redirect_uri=" + encodeURIComponent(REDIRECT_URI)
         url += "&state=" + encodeURIComponent(state)
         window.location.href = url
