@@ -18,6 +18,7 @@ export const Login = () => {
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
     //const SCOPES = "user-top-read"
+    const SCOPES = "user-follow-read"
     var state = generateRandomString(16)
 
     const requestAuthorization = () => {
